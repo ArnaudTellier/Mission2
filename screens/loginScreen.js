@@ -4,19 +4,18 @@ import TextInput from "../components/textInput";
 import ButtonPerso from "../components/button";
 import axios from "../config/axios"
 
-
-const LoginScreen =(navigation) => {
-
+const LoginScreen =({ navigation: { navigate } }) => {
+    
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
     const handleLogin = async () => {
         try {
-            const response = await axios.post("/login_check", {
-                "username" : username,
-                "password" : password
-            })
-            const token = response.data.token
+            // const response = await axios.post( "/login_check", {
+            //     "username" : username,
+            //     "password" : password
+            // })
+            // const token = response.data.token
             // Stoker le token
             navigation.replace("MainTab")
         }
@@ -49,6 +48,7 @@ const LoginScreen =(navigation) => {
             <View style={styles.button}>
                 <ButtonPerso
                     name="Connexion"
+                    navigation={() => navigate('MainTab')}
                 />
             </View>
         </View>

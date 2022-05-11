@@ -1,6 +1,6 @@
 import React from "react";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
-import PostScreen from "../screens/postScreen";
+import CommandesScreen from "../screens/commandesScreen";
 import ContactScreen from "../screens/contactScreen";
 import LogOutScreen from "../screens/logOutScreen.js";
 import { MaterialIcons } from '@expo/vector-icons';
@@ -8,10 +8,10 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
 
-const MainTabNavigator = ()=> {
+const MainTabNavigator = () => {
     return(
         <Tab.Navigator
-            initialRouteName="Posts"
+            initialRouteName="Commandes"
             screenOptions={{
                 headerStyle : {
                     backgroundColor:"#2E4857"
@@ -33,11 +33,11 @@ const MainTabNavigator = ()=> {
             }}
         >
             <Tab.Screen
-                name='Posts'
-                component={PostScreen}
+                name='Commandes'
+                component={CommandesScreen}
                 options={ {
-                    headerTitle: "Liste des posts",
-                    tabBarLabel: "Mes posts",
+                    headerTitle: "Liste des commandes",
+                    tabBarLabel: "Commandes",
                     tabBarIcon: ({focused,color}) =>
                         <MaterialCommunityIcons name="post" size={focused ? 28 : 20} color={color} />
                 }}

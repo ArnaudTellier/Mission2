@@ -21,6 +21,7 @@ const LoginStackNavigator = () => {
                 name="MainTab"
                 component={MainTabNavigator}
             />
+            
         </Stack.Navigator>
     )
 }

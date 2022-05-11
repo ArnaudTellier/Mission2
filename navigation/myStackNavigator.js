@@ -1,7 +1,8 @@
 import React from "react";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
-import CountriesScreen from "../screens/countriesScreen";
-import CountryScreen from "../screens/countryScreen";
+import CommandeScreen from "../screens/commandeScreen";
+import CommandeModifierScreen from "../screens/commandeModifierScreen";
+
 
 // Créer le navigator
 const Stack = createNativeStackNavigator();
@@ -10,7 +11,7 @@ const Stack = createNativeStackNavigator();
 const MyStackNavigator = () => {
     return(
         <Stack.Navigator
-            initialRouteName="Countries"
+            initialRouteName="Commande"
             screenOptions={{
                 headerStyle: {
                     backgroundColor: "coral"
@@ -24,19 +25,21 @@ const MyStackNavigator = () => {
             }}
         >
             <Stack.Screen
-                name="Countries"
-                component={CountriesScreen}
+                name="Commande"
+                component={CommandeScreen}
                 options={{
-                    title: "Liste des pays"
+                    title: "Détails commande"
                 }}
             />
+
             <Stack.Screen
-                name="Country"
-                component={CountryScreen}
+                name="CommandeModifier"
+                component={CommandeModifierScreen}
                 options={{
-                    title: "Détail pays"
+                    title: "Modifier commande"
                 }}
             />
+            
         </Stack.Navigator>
     )
 }
